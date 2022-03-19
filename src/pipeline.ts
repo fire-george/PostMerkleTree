@@ -14,19 +14,15 @@ export async function pipeline(stream: Readable) {
     const found = data.match(regex);
     if (found) return found[0];
   });
-  const tKeccak256 = transform(function (data: string) {
-    return keccak256(data).toString("hex");
-  });
   const pipe = stream
     .pipe(parser)
     .pipe(transformer)
-    .pipe(filter)
-    .pipe(tKeccak256);
+    .pipe(filter);
   const result = [];
   for await (const record of pipe) {
     result.push(record);
   }
   return result.sort().map((value: string) => {
-    return Buffer.from(value).toString("base64");
+    return Buffer.from(value.slice(2), "hex").toString("base64");
   });
 }

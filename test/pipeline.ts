@@ -11,10 +11,10 @@ describe("The pipeline", function () {
       new URL(join(currentDir, "./assets/a.csv"))
     );
     const result = await pipeline(stream);
-    expect(result).to.deep.equal([
-      "MzQ4ODc4MDQ1ZDQ3ZDc1NjU0NWU5YzUyZjVhMGFjZTE5NjVkNDliOTU2MjNhNGJhZTBlNDNmMGVmYmExYTQ2MQ==",
-      "N2EwOWRjYTkyOWNlYzZkYmEyZjg0MzEzOWYyN2I2NDE5YWQwMmQ4M2I1NzYzYzFmNWNhYjM3YzRmMjY2NGY0MA==",
-      "ZGNmZGU3M2Q0Y2Q5YzE0ZWFmYmIwZWQxMmFkODI2MzU0NjY2MTdiYmZkZDM4YmUxN2UyMmU5MjM5YmU3MTNlNQ==",
+    expect(result).to.be.deep.equal([
+      "YtufQLrpX0SbrPvpDCckRr7xjAQ=",
+      "troEvtory4EHV4mOgA6ml5nyn44=",
+      "x5CdkGa3pW8K1WvvvPCInYLFyV8=",
     ]);
   });
 });
